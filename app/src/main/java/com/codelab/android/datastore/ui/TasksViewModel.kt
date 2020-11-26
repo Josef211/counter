@@ -32,7 +32,8 @@ import kotlinx.coroutines.launch
 data class TasksUiModel(
     val tasks: List<Task>,
     val showCompleted: Boolean,
-    val sortOrder: UserPreferences.SortOrder
+    val sortOrder: UserPreferences.SortOrder,
+    val pocitadlo: Int
 )
 
 // MutableStateFlow is an experimental API so we're annotating the class accordingly
@@ -57,7 +58,8 @@ class TasksViewModel(
                 userPreferences.sortOrder
             ),
             showCompleted = userPreferences.showCompleted,
-            sortOrder = userPreferences.sortOrder
+            sortOrder = userPreferences.sortOrder,
+            pocitadlo = userPreferences.pocitadlo
         )
     }
 
@@ -103,6 +105,13 @@ class TasksViewModel(
     fun enableSortByPriority(enable: Boolean) {
         viewModelScope.launch {
             userPreferencesRepository.enableSortByPriority(enable)
+        }
+    }
+
+    //pridani funkcionality
+    fun ciselnik(){
+        viewModelScope.launch {
+            userPreferencesRepository.pocitaninavstev()
         }
     }
 }

@@ -39,6 +39,8 @@ class TasksActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        
+
         viewModel = ViewModelProvider(
             this,
             TasksViewModelFactory(TasksRepository, UserPreferencesRepository.getInstance(this))

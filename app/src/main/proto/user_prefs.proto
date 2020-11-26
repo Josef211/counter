@@ -18,4 +18,8 @@ message UserPreferences {
 
   // user selected tasks sorting order
   SortOrder sort_order = 2;
+
+  //pridani pocitadla
+
+ int64 pocitadlo = 3;
 }

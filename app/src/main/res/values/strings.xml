@@ -19,5 +19,6 @@
     <string name="priority">Priority</string>
     <string name="deadline">Deadline</string>
     <string name="priority_value">Priority %s</string>
-    <string name="number">%s</string>
+    //pridani pocitadla
+    <string name="number">0</string>
 </resources>
