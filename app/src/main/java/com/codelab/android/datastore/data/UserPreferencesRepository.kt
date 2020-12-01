@@ -134,6 +134,13 @@ class UserPreferencesRepository private constructor(context: Context) {
         }
     }
 
+    //pridani funkce pocitaninavstev
+    suspend fun pocitaninavstev(){
+        dataStore.updateData { preferences ->
+            preferences.toBuilder().setCitac(preferences.citac + 1).build()
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: UserPreferencesRepository? = null

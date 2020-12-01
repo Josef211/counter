@@ -50,11 +50,17 @@ class TasksActivity : AppCompatActivity() {
         setupFilterListeners(viewModel)
         setupSort()
 
+        //propojeni s viewModelem
+        viewModel.pocitani()
+
         viewModel.tasksUiModel.observe(owner = this) { tasksUiModel ->
             adapter.submitList(tasksUiModel.tasks)
             updateSort(tasksUiModel.sortOrder)
             binding.showCompletedSwitch.isChecked = tasksUiModel.showCompleted
+            //propojeni textview s funkcionalitou
+            binding.textView3.text = tasksUiModel.pocitadlo.toString()
         }
+
     }
 
     private fun setupFilterListeners(viewModel: TasksViewModel) {

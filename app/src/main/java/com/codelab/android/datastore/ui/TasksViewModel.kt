@@ -59,7 +59,7 @@ class TasksViewModel(
             ),
             showCompleted = userPreferences.showCompleted,
             sortOrder = userPreferences.sortOrder,
-            pocitadlo = userPreferences.pocitadlo
+            pocitadlo = userPreferences.citac
         )
     }
 
@@ -109,7 +109,7 @@ class TasksViewModel(
     }
 
     //pridani funkcionality
-    fun ciselnik(){
+    fun pocitani(){
         viewModelScope.launch {
             userPreferencesRepository.pocitaninavstev()
         }
