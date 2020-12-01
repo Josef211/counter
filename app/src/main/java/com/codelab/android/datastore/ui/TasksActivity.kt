@@ -58,7 +58,7 @@ class TasksActivity : AppCompatActivity() {
             updateSort(tasksUiModel.sortOrder)
             binding.showCompletedSwitch.isChecked = tasksUiModel.showCompleted
             //propojeni textview s funkcionalitou
-            binding.textView3.text = tasksUiModel.pocitadlo.toString()
+            binding.pocet.text = tasksUiModel.citac.toString()
         }
 
     }

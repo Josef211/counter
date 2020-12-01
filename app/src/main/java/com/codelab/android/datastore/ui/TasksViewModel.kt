@@ -33,7 +33,7 @@ data class TasksUiModel(
     val tasks: List<Task>,
     val showCompleted: Boolean,
     val sortOrder: UserPreferences.SortOrder,
-    val pocitadlo: Int
+    val citac: Int
 )
 
 // MutableStateFlow is an experimental API so we're annotating the class accordingly
@@ -59,7 +59,7 @@ class TasksViewModel(
             ),
             showCompleted = userPreferences.showCompleted,
             sortOrder = userPreferences.sortOrder,
-            pocitadlo = userPreferences.citac
+            citac = userPreferences.citac
         )
     }
 
